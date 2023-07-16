@@ -9,9 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
   
       // Perform form validation
       var usernameInput = document.getElementById('username');
-      var passwordInput = document.getElementById('password');
+      var passwordInput = document.getElementById('Password');
+     
   
-      // Validate inputs (you can add additional validation as per your requirements)
+      // Validate inputs (can add additional validation as per  requirements)
       if (usernameInput.value.trim() === '') {
         alert('Please enter a username.');
         return;
