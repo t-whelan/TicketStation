@@ -1,34 +1,29 @@
-// Wait for the document to load
-document.addEventListener('DOMContentLoaded', function() {
-    // Get the form element
-    var form = document.getElementById('login-form');
-  
-    // Handle form submission
-    form.addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent default form submission
-  
-      // Perform form validation
-      var usernameInput = document.getElementById('username');
-      var passwordInput = document.getElementById('Password');
-     
-  
-      // Validate inputs (can add additional validation as per  requirements)
-      if (usernameInput.value.trim() === '') {
-        alert('Please enter a username.');
-        return;
-      }
-  
-      if (passwordInput.value.trim() === '') {
-        alert('Please enter a password.');
-        return;
-      }
-  
-      // If form is valid, perform login logic ()
-      
-      console.log('Username:', usernameInput.value);
-      console.log('Password:', passwordInput.value);
-  
-      // Optional code, to  reset the form after successful submission
-      form.reset();
-    });
-  });
+// Js code for a form element with the id "login-form" in your HTML
+
+// Get the form element by its id
+const form = document.getElementById('login-form');
+
+// Adds an event listener to the form's submit event
+form.addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the default form submission
+
+  // Gets the values from the form inputs
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+
+  // Perform any necessary validation or processing with the username and password here
+
+  // Redirects the user to the new page
+  window.location.href = 'index.html';
+});
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+

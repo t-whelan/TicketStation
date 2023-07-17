@@ -1,0 +1,12 @@
+body{
+    background-color: rgb(96, 219, 80);
+}
+
+/* nav bar */
+li{
+   border: solid white; 
+   border-color: white;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   background-color:greenyellow;
+   font-size: 29px;
+}
