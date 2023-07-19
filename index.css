@@ -59,7 +59,7 @@ li{
    border-radius: 1px;
    border-color: white;
    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-   background-color: greenyellow;
+   background-color: rgb(34,193,195);
  align-items: center;
  
 
@@ -69,7 +69,7 @@ li{
 
 
 li:hover{
-    background-color: rgba(34,193,195,1);
+    background-color:greenyellow;
 }
 
 
@@ -100,6 +100,10 @@ color: white;
 display: block;
 text-decoration:none;
 padding: 20px 16px;
+padding: 20px 16px;
+border: solid white;
+border-width: 5px;
+border-radius: 20px;
 
    }
 
@@ -109,8 +113,40 @@ p{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 29px;
     color: white;
-     
     padding: 20px 16px;
+border: solid white;
+border-width: 5px;
+border-radius: 20px;
+padding: 20px 16px;
   ;
     
 }
+
+/* Button styling*/
+button{
+border: solid white;
+border-radius:20px ;
+padding: 20px 20px;
+background-color: rgb(34,193,195);
+color: white;
+size: 70px;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-size: 20px;
+margin: auto;
+display: block;
+text-decoration: none;
+
+}
+/* when button is hovered over */
+button:hover{
+cursor: pointer;
+background-color:greenyellow;
+}
+
+/* removes underline from anchor tag */
+a{
+    text-decoration: none;
+}
+
+
+body{height: 200vh;}
