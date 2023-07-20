@@ -1,11 +1,9 @@
 #eventContainer {
-
-    padding: 20px;
-    width: 300px;
+    padding: 10px;
+    width: 250px;
     margin: 20px;
-    display: inline-block;
+    display: flex;
     border-radius: 5px;
-
     text-align: center;
   }
 
@@ -44,11 +42,13 @@
     background-color: #3e8e41;
   }
   .event-card {
-    display: flex;
-    flex-direction: column;
+    width: 300px;
+    display: block;
+    margin: 10px;
+    
     align-items: center;
     margin-bottom: 20px;
-    padding: 10px;
+    padding: 50px;
     border: 1px solid #6b6565;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(18, 5, 5, 0.1);
