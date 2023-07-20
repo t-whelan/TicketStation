@@ -1,0 +1,92 @@
+#eventContainer {
+    
+    padding: 20px;
+    width: 300px;
+    margin: 20px;
+    display: inline-block;
+    border-radius: 5px;
+    
+    text-align: center;
+  }
+  
+  #eventContainer img {
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  #eventContainer h2 {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  
+  #eventContainer p {
+    margin: 5px 0;
+  }
+  .event-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  .event-button:hover {
+    background-color: #45a049;
+  }
+  
+  .event-button:active {
+    background-color: #3e8e41;
+  }
+  .event-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #6b6565;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(18, 5, 5, 0.1);
+  }
+
+  .event-card img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+  .event-card h2 {
+    margin-bottom: 5px;
+  }
+
+  .event-card p {
+    margin: 5px 0;
+  }
+
+  .event-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  .event-button:hover {
+    background-color: #45a049;
+  }
+
+  .event-button:active {
+    background-color: #3e8e41;
+  }
