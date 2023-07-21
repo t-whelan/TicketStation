@@ -1,9 +1,9 @@
 // Js code for a form element with the id "login-form" in your HTML
 
-// Get the form element by its id
+// Getting the form element by its id in the html document
 const form = document.getElementById('login-form');
 
-// Adds an event listener to the form's submit event
+// Adds an event listener to the form's submit event button
 form.addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent the default form submission
 
@@ -14,7 +14,7 @@ form.addEventListener('submit', function(event) {
   // Perform any necessary validation or processing with the username and password here
 
   // Redirects the user to the new page
-  window.location.href = 'index.html';
+  window.location.href = './home.html';
 });
 
 

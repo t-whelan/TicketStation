@@ -127,7 +127,7 @@ function renderEventsClass() {
 
       const buyTicketsButton = eventCard.querySelector('.event-button');
       buyTicketsButton.addEventListener('click', () => {
-        window.location.href = 'tickets.html';
+        window.location.href = '/TicketPage/ticket.html';
       });
     });
   }

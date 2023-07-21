@@ -1,25 +1,41 @@
+/* Outside border of all cards */
+
 #eventContainer {
-    padding: 10px;
-    width: 250px;
-    margin: 20px;
-    display: flex;
+    padding: 5px;
+    width: 1250px;
+    margin: 50px;
     border-radius: 5px;
     text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    border:solid #00d70b;
+    
+    
+  
   }
 
   #eventContainer img {
     width: 100%;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    border: solid #00d70b;
+    
   }
-
+ 
+  /* event Container Heading */
   #eventContainer h2 {
     margin-top: 10px;
-    font-size: 20px;
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
+  /* Event Container Content */
   #eventContainer p {
     margin: 5px 0;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
   }
   .event-button {
     background-color: #4CAF50;
@@ -42,16 +58,19 @@
     background-color: #3e8e41;
   }
   .event-card {
-    width: 300px;
+    width: 500px;
     display: block;
     margin: 10px;
     
-    align-items: center;
+    /* align-items: center; */
     margin-bottom: 20px;
-    padding: 50px;
-    border: 1px solid #6b6565;
+    padding: 25px;
+    border: 5px solid #ffffff;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(18, 5, 5, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: solid rgb #00d70b;
+    border-radius: 2px;
+  
   }
 
   .event-card img {
@@ -64,10 +83,17 @@
 
   .event-card h2 {
     margin-bottom: 5px;
+    
   }
 
+  /* card information */
   .event-card p {
-    margin: 5px 0;
+    margin: 5px 0px;
+    width:250px;
+    text-align: center;
+  
+  
+  
   }
 
   .event-button {
@@ -83,10 +109,50 @@
     cursor: pointer;
   }
 
+  /* when button is hovered over */
   .event-button:hover {
-    background-color: #45a049;
+    background-color: #00d70b;
   }
 
   .event-button:active {
     background-color: #3e8e41;
   }
+
+
+  /* Search Button */
+  #searchButton{
+   border: solid white;
+   border-radius: 14px;
+   background-color: #00d70b; 
+   color:black;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-size: 20px;
+
+  }
+
+  /* Search button hover */
+ #searchButton:hover {
+background-color: #5ce863;
+cursor: pointer;
+
+  }
+
+  /* search Bar */
+ #searchInput {
+  border: solid #00d70b;
+  border-radius: 8px;
+  width: 250px;
+  font-size:25px;
+  
+  }
+  /* when search bar is active */
+  #searchInput:active{
+border: solid 3px #00d70b;
+  }
+
+ /* body background colour */
+body{
+ /* background: url(https://cssgradient.io/);
+ background: rgb(34,193,195);
+ background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(63,168,49,1) 100%); */
+}
