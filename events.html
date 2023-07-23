@@ -7,15 +7,28 @@
     <title>events</title>
 </head>
 <body>
-  <ul id="resultList"></ul>
-
   <input type="search" id="searchInput" name="search" placeholder="Search...">
   <input type="submit" value="Search">
-  <ul id="resultList"></ul>
+  <div class="category">
+    <label for="category-filter">Filter by Category:</label>
+    <select id="category-filter">
+      <option value="all">All</option>
+      <option value="Nature">Nature</option>
+      <option value="Water">Water sports</option>
+      <option value="Adventure">Adventure</option>
+    </select>
+  </div>
+  <label for="date-filter" class="Filterdate">Filter by Date:</label>
+  <select id="date-filter">
+    <option value="all">All</option>
+    <option value="upcoming">Upcoming</option>
+    <option value="passed">Passed</option>
+  </select>
 
-    <div id="eventContainer"></div>
-    <main id="formDisplay"></main>
-    
+  <ul id="resultList"></ul>
+  
+   
 </body>
 <script src="events.js"></script>
+<script src="search.js"></script>
 </html>
