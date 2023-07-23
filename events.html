@@ -1,34 +1,243 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="events.css">
-    <title>events</title>
+    <title>WildPass Events</title>
+    <!-- Include any necessary CSS styles here -->
 </head>
 <body>
-  <input type="search" id="searchInput" name="search" placeholder="Search...">
-  <input type="submit" value="Search">
-  <div class="category">
-    <label for="category-filter">Filter by Category:</label>
-    <select id="category-filter">
-      <option value="all">All</option>
-      <option value="Nature">Nature</option>
-      <option value="Water">Water sports</option>
-      <option value="Adventure">Adventure</option>
-    </select>
-  </div>
-  <label for="date-filter" class="Filterdate">Filter by Date:</label>
+    <h1>WildPass Events</h1>
+    <div>
+        <label for="category">Select Category:</label>
+        <select id="category">
+            <option value="all">All</option>
+            <option value="nature">Nature</option>
+            <option value="water">Water</option>
+            <option value="adventure">Adventure</option>
+            <!-- Add more categories as needed -->
+        </select>
+    </div>
+    <div>
+        <label for="date-filter" class="Filterdate">Filter by Date:</label>
   <select id="date-filter">
     <option value="all">All</option>
     <option value="upcoming">Upcoming</option>
     <option value="passed">Passed</option>
   </select>
+    <button id="searchBtn">Search</button>
+    <div id="ticketList">
+        <!-- Tickets will be displayed here -->
+    </div>
 
-  <ul id="resultList"></ul>
-  
-   
-</body>
-<script src="events.js"></script>
-<script src="search.js"></script>
+    <!-- JavaScript code here -->
+
+
+    <script>
+        // Sample ticket data
+        const tickets = [
+        { id: 1, category: "nature", date: "2023-07-25", description: "Game Drive", price: "R350" },
+        { id: 2, category: "water", date: "2023-07-26", description: "Parasailing", price: "R250" },
+        { id: 3, category: "adventure", date: "2023-07-28", description: "Bunjee Jumping", price: "R450" },
+        { id: 4, category: "nature", date: "2023-07-25", description: "Wine tasting", price: "R350" },
+        { id: 5, category: "water", date: "2023-07-26", description: "Surfing", price: "R250" },
+        { id: 6, category: "adventure", date: "2023-07-28", description: "Hot Air Ballooning", price: "R450" },
+        { id: 7, category: "nature", date: "2023-08-10", description: "Nature Hike", price: "R150" },
+        { id: 8, category: "water", date: "2023-08-15", description: "Boat Trip", price: "R300" },
+        // if needed to -Add more ticket data here
+        ];
+    
+        // A Function to filter and render tickets based on the given filters
+       
+        function renderTickets(categoryFilter, dateFilter) {
+            const ticketListElement = document.getElementById("ticketList");
+            ticketListElement.innerHTML = "";
+    
+            const now = new Date();
+            const filteredTickets = tickets.filter((ticket) => {
+                const ticketDate = new Date(ticket.date);
+                if (categoryFilter === "all" || ticket.category === categoryFilter) {
+                    if (dateFilter === "all") {
+                        return true;
+                    } else if (dateFilter === "upcoming" && ticketDate >= now) {
+                        return true;
+                    } else if (dateFilter === "passed" && ticketDate < now) {
+                        return true;
+                    }
+                }
+                return false;
+            });
+    
+            if (filteredTickets.length === 0) {
+                ticketListElement.innerHTML = "<p>No tickets found.</p>";
+                return;
+            }
+
+            const eventImages = {
+            1:"image1.jpg",
+            2:"image2.jpg",
+            3:"image3.jpg",
+            4:"image4.jpg",
+            5:"image5.jpg",
+            6:"image6.jpg",
+            7:"image7.jpg",
+            8:"image8.jpg",
+
+            // Add more mappings as needed
+            };
+
+            
+    
+            filteredTickets.forEach((ticket) => {
+                const ticketElement = document.createElement("div");
+                ticketElement.innerHTML = `
+                <img src="${eventImages[ticket.id]}" alt="Ticket Image" class="ticket-image">
+                                            <p>Event: ${ticket.id}</p>
+                                            <p>Category: ${ticket.category}</p>
+                                            <p>Date: ${ticket.date}</p>
+                                            <p>Description: ${ticket.description}</p>
+                                            <p>Price: ${ticket.price}</p>
+                                            <button class="purchaseBtn">Purchase</button>
+                                            <hr>`;
+                ticketListElement.appendChild(ticketElement);
+            });
+        }
+    
+
+
+
+
+
+        // Event listener for the search button click
+        document.getElementById("searchBtn").addEventListener("click", () => {
+            const categoryFilter = document.getElementById("category").value;
+            const dateFilter = document.getElementById("date-filter").value;
+            renderTickets(categoryFilter, dateFilter);
+        });
+    
+        // Initial render of all tickets
+        renderTickets("all", "all");
+
+
+
+// HTML rendering
+const eventContainer = document.getElementById('eventContainer');
+
+events.forEach((event) => {
+  const eventCard = document.createElement('div');
+  eventCard.classList.add('event-card');
+  eventCard.innerHTML = `
+    <!-- ... Event card content ... -->
+    <button class="event-button">Buy Tickets</button>
+  `;
+  eventContainer.appendChild(eventCard);
+
+  const buyTicketsButton = eventCard.querySelector('.event-button');
+  buyTicketsButton.addEventListener('click', () => {
+    const newForm = document.createElement('div');
+    newForm.classList.add('popup');
+    newForm.innerHTML = `
+      <div class="overlay" id="paymentFormDisplay">
+        <div class="content">
+          <div class="modal">
+            <form class="form" id="form">
+              <!-- ... Credit card form content ... -->
+              <button class="purchase--btn" type="submit">Purchase</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Append the form to the eventCard element
+    eventCard.appendChild(newForm);
+
+    // Handle form submission
+    const paymentForm = newForm.querySelector('.form');
+    paymentForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const nameInput = document.querySelector('#nameInput');
+      const cardNumberInput = document.querySelector('#cardNumberInput');
+      const expiryDateInput = document.querySelector('#expiryDateInput');
+      const cvvInput = document.querySelector('#cvvInput');
+
+      const nameValue = nameInput.value.trim();
+      const cardNumberValue = cardNumberInput.value.trim();
+      const expiryDateValue = expiryDateInput.value.trim();
+      const cvvValue = cvvInput.value.trim();
+
+      if (!nameValue || !cardNumberValue || !expiryDateValue || !cvvValue) {
+        alert(`Error: Please fill in all the credit card information.`);
+      } else {
+        alert(`Payment of $${event.price} was made successfully for ${event.name} event on ${event.date}.`);
+        // Redirect to ticket page or perform other actions
+      }
+    });
+  });
+});
+
+
+
+    </script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Styling -->
+    <style>
+body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: green;
+        }
+        /* Add more CSS styles as needed */
+        .ticket-image {
+            max-width: 200px;
+            height: auto;
+        }
+        .ticketList {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .ticket {
+            width: 300px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid green;
+            border-radius: 5px;
+        }
+        .purchaseBtn {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .purchaseBtn:hover {
+            background-color: darkgreen;
+        }
+    </style>
+
+
+
+
+    </style>
+    </body>
+    </html>
 </html>
