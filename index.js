@@ -15,7 +15,7 @@ submit.addEventListener('click', function(event) {
   const forEmailAndPassword = input.value.trim();
   if(forEmailAndPassword ===''){
     alert('please enter valid information');
-  }else{window.location.href = 'index.html';}// Redirects the user to the new page
+  }else{window.location.href = 'home.html';}// Redirects the user to the new page
 
   // const email = input.value.trim();
   // const UserPassword = input.value.trim();
