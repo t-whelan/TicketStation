@@ -1,0 +1,135 @@
+
+body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 24px;
+    }
+    h1 {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: green;
+        font-size: 44px;
+        font-style: italic;
+    }
+    /* Add more CSS styles as needed */
+    .ticket-image {
+   width: 440px;
+        height: auto;
+        border: solid 5px green;
+    }
+
+
+    .ticketList {
+        display: grid;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        
+    }
+    .ticket {
+        width: 300px;
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid green;
+        border-radius: 5px;
+    }
+    .purchaseBtn {
+        background-color: green;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 24px;
+        margin-top: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .purchaseBtn:hover {
+        background-color: darkgreen;
+    }
+
+
+    /* Styling for the label */
+label {
+    display: block; /* Make the label a block-level element */
+    margin-bottom: 8px; /* Add some space below the label */
+    font-weight: bold; /* Make the label text bold */
+    color: #333; /* Set the text color */
+  }
+  
+  /* Styling for the select element */
+  select#category {
+    padding: 8px; /* Add padding to the select element */
+    font-size: 14px; /* Set the font size */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 5px; /* Add rounded corners */
+    width: 200px; /* Set the width of the select element */
+    background-color: #f8f8f8; /* Set the background color */
+    color: #333; /* Set the text color */
+  }
+  
+  /* Styling for the select options */
+  select#category option {
+    padding: 8px; /* Add padding to the options */
+  }
+
+
+  /* Styling for the label */
+.Filterdate {
+    display: block; /* Make the label a block-level element */
+    margin-bottom: 8px; /* Add some space below the label */
+    font-weight: bold; /* Make the label text bold */
+    color: #333; /* Set the text color */
+  }
+  
+  /* Styling for the select element */
+  select#date-filter {
+    padding: 8px; /* Add padding to the select element */
+    font-size: 14px; /* Set the font size */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 5px; /* Add rounded corners */
+    background-color: #f8f8f8; /* Set the background color */
+    color: #333; /* Set the text color */
+  }
+  
+  /* Styling for the select options */
+  select#date-filter option {
+    padding: 8px; /* Add padding to the options */
+  }
+  
+  /* Styling for the search button */
+  #searchBtn {
+    padding: 8px 16px; /* Add padding to the button */
+    font-size: 14px; /* Set the font size */
+    background-color: green; /* Set the background color */
+    color: white; /* Set the text color */
+    border: none; /* Remove the default button border */
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer; /* Show a pointer cursor on hover */
+  }
+  
+  /* Hover effect for the search button */
+  #searchBtn:hover {
+    background-color: darkgreen; /* Change the background color on hover */
+  }
+
+
+
+/* Hide the default dropdown arrow */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 25px; /* Add some padding to make space for a custom arrow */
+  background-image: url("custom_arrow.png"); /* Replace "custom_arrow.png" with your custom arrow image */
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 12px; /* Adjust the size of the custom arrow */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px; /* Add padding to the select element */
+  font-size: 14px; /* Set the font size */
+  background-color: #f8f8f8; /* Set the background color */
+  color: #333; /* Set the text color */
+}
+
+/* Styling for the select options */
